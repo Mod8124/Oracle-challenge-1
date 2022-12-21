@@ -1,0 +1,278 @@
+:root {
+  --dark-blue-100: #609ed4;
+  --dark-blue-200: #356ea9;
+  --dark-blue-300: #0a3b71;
+  --dark-blue-400: #072b61;
+  --dark-blue-500: #052051;
+
+  --light-blue-100: #f3f5fc;
+  --light-blue-200: #eff1fa;
+  --light-blue-300: #e9ecf8;
+  --light-blue-400: #aab2d5;
+  --light-blue-500: #757fb2;
+
+  --gray-100: #ced4da;
+  --gray-200: #adb5bd;
+  --gray-300: #868e96;
+  --gray-400: #495057;
+  --gray-500: #343a40;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background: var(--light-blue-100);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.encryption {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--light-blue-100);
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 30px;
+}
+
+.cta {
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+
+.cta__cta {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 4vh;
+}
+
+.cta__ctaInput {
+  width: 100%;
+  max-width: 700px;
+}
+
+textarea {
+  color: var(--dark-blue-300);
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  border: none;
+  padding-left: 0;
+  margin-left: 0;
+  outline: none;
+  resize: none;
+  font-size: 22px;
+  line-height: 150%;
+  background-color: transparent;
+}
+
+textarea::placeholder {
+  color: var(--dark-blue-300);
+}
+
+.cta__ctaInfo {
+  width: 100%;
+  display: flex;
+  align-self: flex-end;
+}
+
+.cta__ctaBottom {
+  width: 100%;
+}
+
+.cta_ctaInfowrapper {
+  width: 100%;
+  display: flex;
+}
+
+.cta_ctaInfowrapper p {
+  padding-left: 1vh;
+  color: var(--gray-400);
+  transition: all 0.5s ease-in-out;
+}
+
+.active.cta_ctaInfowrapper p {
+  color: red;
+}
+
+.cta__ctaButtons {
+  width: 100%;
+  padding: 15px;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  column-gap: 4vh;
+  row-gap: 1vh;
+  min-height: 67px;
+}
+
+.cta__ctaButton {
+  width: 100%;
+  /* max-width: 330px; */
+  border-radius: 10px;
+  border: none;
+  min-height: 55px;
+  background-color: var(--dark-blue-300);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.cta__ctaButton:hover {
+  border: 1px solid var(--dark-blue-500);
+  background-color: var(--dark-blue-200);
+}
+
+.cta__ctaButton--grey {
+  background-color: transparent;
+  color: var(--dark-blue-300);
+  border: 1px solid var(--dark-blue-300);
+}
+
+.cta__ctaButton--grey:hover {
+  background-color: var(--dark-blue-100);
+  color: white;
+}
+
+.result {
+  padding: 3vh;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.result__title {
+  width: 80%;
+  text-align: center;
+  padding-top: 3vh;
+  font-size: 24px;
+  color: var(--gray-400);
+  transition: all 0.5s ease-in-out;
+}
+
+.result__boy {
+  transform: translateY(0%);
+  transition: all 0.5s ease-in-out;
+  display: none;
+}
+
+.result__paragraph {
+  color: var(--gray-400);
+  padding-bottom: 3vh;
+  line-height: 150%;
+}
+
+.cta-ctaButton-desative,
+.result__paragraph {
+  transition: all 0.5s ease-in-out;
+  transform: translateX(150%);
+}
+
+.cta-ctaButton-desative {
+  position: relative;
+  right: 300%;
+  display: none;
+}
+
+.active .cta-ctaButton-desative,
+.active .result__paragraph {
+  transform: translateX(0);
+  right: 0;
+}
+
+.active .cta-ctaButton-desative {
+  display: block;
+}
+
+.active .result__paragraph {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.active .result__title {
+  transform: translateX(-150%);
+  position: absolute;
+}
+.active .result__boy {
+  transform: translateY(300%);
+  position: absolute;
+}
+
+.cta-ctaButton-desative::after {
+  content: '✔️ Texto Copiado';
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: var(--light-blue-100);
+  position: absolute;
+  top: -110%;
+  color: var(--dark-blue-300);
+  transition: all 0.5s ease-in-out;
+  height: 100%;
+  opacity: 1;
+  outline: none;
+  transform: scale(0);
+}
+
+.copy.cta-ctaButton-desative::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media only screen and (min-width: 700px) {
+  .cta__ctaButtons {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .encryption {
+    grid-template-columns: 80% 20%;
+  }
+
+  .result {
+    max-width: 400px;
+    padding: 0;
+  }
+
+  .cta__cta {
+    padding-left: 20vh;
+  }
+
+  textarea {
+    font-size: 32px;
+  }
+
+  .cta__ctaButton {
+    max-width: 330px;
+  }
+
+  .cta-ctaButton-desative {
+    display: block;
+  }
+
+  .result__boy {
+    display: block;
+  }
+
+  .active.result {
+    background-image: url('../assets/1.gif');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 30px;
+  }
+
+  .cta-ctaButton-desative::after {
+    top: -130%;
+  }
+}

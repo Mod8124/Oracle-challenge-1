@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="shortcut icon" href="./src/assets/ico.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <main class="encryption">
+      <section class="cta">
+        <div class="cta__logo">
+          <img
+            class="cta__logoImg"
+            src="./src/assets/img/logo.svg"
+            alt="logo-encryption"
+          />
+        </div>
+        <article class="cta__cta">
+          <div class="cta__ctaInput">
+            <textarea
+              name="text"
+              rows="4"
+              cols="50"
+              autofocus
+              placeholder="Ingrese el Texto Aqui"
+            ></textarea>
+          </div>
+
+          <div class="cta__ctaInfo">
+            <div class="cta__ctaBottom">
+              <div class="cta_ctaInfowrapper">
+                <img src="./src/assets/img/icon-info.svg" alt="info-icon" />
+                <p>Solo letras minúsculas y sin acentos</p>
+              </div>
+              <div class="cta__ctaButtons">
+                <button class="cta__ctaButton cta-ctaButton--blue">
+                  Encriptar
+                </button>
+                <button class="cta__ctaButton cta__ctaButton--grey">
+                  Desencriptar
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="result">
+        <div class="result__boy">
+          <img src="./src/assets/img/boy.svg" alt="boy-svg" />
+        </div>
+        <h2 class="result__title">Ningún mensaje fue encontrado</h2>
+        <p class="result__paragraph"></p>
+        <button
+          class="cta__ctaButton cta__ctaButton--grey cta-ctaButton-desative"
+        >
+          Copiar
+        </button>
+      </section>
+    </main>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>
