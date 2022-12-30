@@ -31,6 +31,7 @@
   display: grid;
   grid-template-columns: 100%;
   padding: 30px;
+  overflow: hidden;
 }
 
 .cta {
